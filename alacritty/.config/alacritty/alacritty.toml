@@ -1,12 +1,16 @@
 import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
+  "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
 ]
 
 [env]
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.6
+opacity = 0.75
+padding.x = 10
+padding.y = 10
+# decorations = "Buttonless"
+blur = false
 
 [font]
 size = 14.0
