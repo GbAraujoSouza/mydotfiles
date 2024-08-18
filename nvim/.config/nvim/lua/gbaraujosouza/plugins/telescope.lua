@@ -12,6 +12,9 @@ return {
     config = function()
       local actions = require("telescope.actions")
       require("telescope").setup({
+        find_files = {
+          hidden = true
+        },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({}),
