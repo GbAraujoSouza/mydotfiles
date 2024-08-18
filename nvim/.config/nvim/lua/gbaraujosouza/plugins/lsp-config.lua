@@ -14,7 +14,6 @@ return {
         ensure_installed = {
           "lua_ls",
           "tsserver",
-          "jdtls"
         }
       })
     end,
@@ -42,6 +41,9 @@ return {
         capabilities = capabilities
       })
       lspconfig.prismals.setup({
+        capabilities = capabilities
+      })
+      lspconfig.tailwindcss.setup({
         capabilities = capabilities
       })
 
