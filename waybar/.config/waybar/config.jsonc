@@ -1,0 +1,52 @@
+// -*- mode: jsonc -*-
+{
+  "include": [
+    "~/.config/waybar/modules.json"
+  ],
+  // "width": 1280, // Waybar width
+  "spacing": 0, // Gaps between modules (4px)
+  "modules-left": [
+    "custom/launcher",
+    // "hyprland/mode",
+    // "custom/media",
+    // "hyprland/window",
+    "custom/spotify"
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+  ],
+  "modules-right": [
+    "tray",
+    "mpd",
+    "pulseaudio",
+    "network",
+    "power-profiles-daemon",
+    "cpu",
+    "memory",
+    "temperature",
+    "keyboard-state",
+    "sway/language",
+    "battery",
+    "battery#bat2",
+    "hyprland/language",
+    "clock",
+    "custom/power"
+  ],
+  // Modules configuration
+  // "sway/workspaces": {
+  //     "disable-scroll": true,
+  //     "all-outputs": true,
+  //     "warp-on-scroll": false,
+  //     "format": "{name}: {icon}",
+  //     "format-icons": {
+  //         "1": "",
+  //         "2": "",
+  //         "3": "",
+  //         "4": "",
+  //         "5": "",
+  //         "urgent": "",
+  //         "focused": "",
+  //         "default": ""
+  //     }
+  // },
+}
