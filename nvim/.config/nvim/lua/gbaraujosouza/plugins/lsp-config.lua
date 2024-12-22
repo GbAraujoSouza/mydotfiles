@@ -13,7 +13,6 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "ts_ls",
         }
       })
     end,
@@ -27,7 +26,7 @@ return {
       local util = require("lspconfig/util")
 
       local lspconfig = require("lspconfig")
-      lspconfig.ts_ls.setup({
+      lspconfig.tsserver.setup({
         capabilities = capabilities
       })
       lspconfig.jdtls.setup({
