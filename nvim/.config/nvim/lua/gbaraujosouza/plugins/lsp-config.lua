@@ -56,9 +56,14 @@ return {
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, {})
+      vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, {})
       vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, {})
+      vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {})
+      vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set("n", "<leader>re", vim.lsp.buf.rename, {})
     end,
   },
 }

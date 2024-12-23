@@ -37,6 +37,9 @@ return {
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {})
 
+      -- popup all errors and wornings
+      vim.keymap.set("n", "<leader>da", "<cmd>Telescope diagnostics<cr>", {})
+
       require("telescope").load_extension("ui-select")
     end,
   },
