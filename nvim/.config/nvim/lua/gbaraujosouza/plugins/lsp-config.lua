@@ -13,6 +13,8 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
+          "ts_ls",
+          "pyright",
         }
       })
     end,
@@ -26,7 +28,7 @@ return {
       local util = require("lspconfig/util")
 
       local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
       lspconfig.jdtls.setup({
