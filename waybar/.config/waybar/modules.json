@@ -86,7 +86,8 @@
   },
   "clock": {
     "format": "{:%a %d %b %H:%M}",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "<big>{:%Y %B \t   week: %V }</big>\n<tt>{calendar}</tt>"
   },
   "cpu": {
     "format": "{usage}% ",
