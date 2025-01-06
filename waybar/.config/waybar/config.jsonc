@@ -10,6 +10,7 @@
     // "hyprland/mode",
     // "custom/media",
     // "hyprland/window",
+    "custom/bluetooth",
     "custom/spotify"
   ],
   "modules-center": [

@@ -1,7 +1,7 @@
 @import "./themes-catppuccin/macchiato.css";
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Hack Nerd Font"; 
+  font-family: "Hack Nerd Font";
   font-size: 14px;
   margin: 0;
 }
@@ -95,9 +95,6 @@ button {
 #pulseaudio,
 #custom-media,
 #tray,
-#mode,
-#idle_inhibitor,
-#mpd,
 #custom-multiplayerctl {
   padding: 4px 16px;
   background-color: @surface0;
@@ -126,10 +123,10 @@ button {
 }
 
 .modules-right {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .modules-left {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 #clock {
@@ -145,15 +142,16 @@ button {
   color: @sapphire;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
   color: @lavender;
 }
 
 @keyframes blink {
-to {
-  background-color: #ffffff;
-  color: #000000;
-}
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
 #battery.critical:not(.charging) {
@@ -175,7 +173,7 @@ label:focus {
 }
 
 #disk {
-  background-color: #964B00;
+  background-color: #964b00;
 }
 
 #backlight {
@@ -215,6 +213,7 @@ label:focus {
 }
 
 #tray {
+  min-width: 25px;
   /* background-color: #2980b9; */
 }
 
@@ -255,7 +254,8 @@ label:focus {
 
 #custom-spotify,
 #custom-weather,
+#custom-bluetooth,
 #custom-mail {
-  margin: 0px 6px 0px 10px;
+  /* margin: 0px 6px 0px 6px; */
   min-width: 25px;
 }
