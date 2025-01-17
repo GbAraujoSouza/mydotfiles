@@ -1,7 +1,3 @@
-
-
-
-
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
@@ -25,7 +21,7 @@ return {
                 local version = vim.version()
                 local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
-                return datetime .. "   " .. " plugins" .. nvim_version_info
+                return datetime .. nvim_version_info
             end
 
             local logo = {
@@ -81,11 +77,10 @@ return {
             dashboard.section.header.opts.hl = pick_color()
 
             dashboard.section.buttons.val = {
-                dashboard.button("<Leader>ff", "  File Explorer"),
-                dashboard.button("<Leader>fo", "  Find File"),
-                dashboard.button("<Leader>fw", "  Find Word"),
-                dashboard.button("<Leader>ps", "  Update plugins"),
-                dashboard.button("q", "  Quit", ":qa<cr>")
+                dashboard.button("<C-n>", "  File Explorer"),
+                dashboard.button("<Leader>ff", "  Find File"),
+                dashboard.button("<Leader>fg", "  Find Word"),
+                dashboard.button("q", "  Quit", ":qa<cr>")
             }
 
             dashboard.section.footer.val = footer()
