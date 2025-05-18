@@ -1,6 +1,11 @@
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
+    local function debugger_status()
+      local dap = require("dap")
+      return dap.status() ~= "" and "DEBUGGING" or ""
+    end
+
     require("lualine").setup({
       options = {
         theme = "catppuccin-mocha",
@@ -34,7 +39,10 @@ return {
             -- always_visible = false, -- Show diagnostics even if there are none.
           },
         },
-        lualine_x = {"fileformat", "filetype"}
+        lualine_x = {"fileformat", "filetype", {
+          debugger_status,
+          color = { fg = "#FF0000", gui = "bold"}
+        }}
       },
     })
   end,

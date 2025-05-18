@@ -48,7 +48,11 @@ return {
     vim.keymap.set("n", "<F3>", dap.step_over)
     vim.keymap.set("n", "<F4>", dap.step_out)
     vim.keymap.set("n", "<F5>", dap.step_back)
+    vim.keymap.set("n", "<F6>", dap.terminate)
     vim.keymap.set("n", "<F12>", dap.restart)
+
+    -- Toggle debug ui
+    vim.keymap.set("n", "<leader>du", ui.toggle)
 
     -- Tell dap ui when to open the ui
     dap.listeners.before.attach.dapui_config = function()
@@ -65,5 +69,6 @@ return {
     end
 
     vim.fn.sign_define('DapBreakpoint',{ text ='🔴', texthl ='', linehl ='', numhl =''})
+    vim.fn.sign_define('DapStopped',{ text ='👉', texthl ='', linehl ='', numhl =''})
   end
 }
