@@ -1,0 +1,4 @@
+you can change starship theme by updating the symbolic link in .config/ directory
+
+In .config/ directory execute the following changing <theme> to the desired one:
+  ln -sfn <theme>-starship.toml starship.toml
