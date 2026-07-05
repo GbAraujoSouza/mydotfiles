@@ -26,40 +26,28 @@ return {
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-            local util = require("lspconfig/util")
-
-            local lspconfig = require("lspconfig")
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities
-            })
-            lspconfig.jdtls.setup({
-                capabilities = capabilities
-            })
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities
-            })
-            lspconfig.clangd.setup({
-                capabilities = capabilities,
-                cmd = { "clangd", "--fallback-style={IndentWidth: 4, UseTab: Never}" },
-            })
-            lspconfig.pyright.setup({
-                capabilities = capabilities
-            })
-            lspconfig.prismals.setup({
-                capabilities = capabilities
-            })
-            lspconfig.tailwindcss.setup({
-                capabilities = capabilities
-            })
-            lspconfig.gopls.setup({
-                capabilities = capabilities,
-                cmd = { "gopls" },
-                filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                root_dir = util.root_pattern("go.work", "go.mod", ".git")
-            })
-            lspconfig.angularls.setup({
-                capabilities=capabilities
-            })
+            local servers = {
+                ts_ls = {},
+                jdtls = {},
+                lua_ls = {},
+                clangd = {
+                    cmd = { "clangd", "--fallback-style={IndentWidth: 4, UseTab: Never}" },
+                },
+                pyright = {},
+                prismals = {},
+                tailwindcss = {},
+                gopls = {
+                    cmd = { "gopls" },
+                    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+                    root_markers = { "go.work", "go.mod", ".git" }
+                },
+                angularls = {}
+            }
+            for server, config in pairs(servers) do
+                config.capabilities = capabilities
+                vim.lsp.config(server, config)
+                vim.lsp.enable(server)
+            end
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
